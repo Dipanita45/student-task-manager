@@ -23,12 +23,25 @@
 
         <div class="task-form">
             <input type="text" id="taskInput" placeholder="Enter task">
-            <button onclick="addTask()">Add</button>
+            <button id="addTaskButton">Add</button>
         </div>
 
         <ul id="taskList"></ul>
     </main>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var addTaskButton = document.getElementById("addTaskButton");
+
+            if (addTaskButton) {
+                addTaskButton.addEventListener("click", function () {
+                    if (typeof addTask === "function") {
+                        addTask();
+                    }
+                });
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
